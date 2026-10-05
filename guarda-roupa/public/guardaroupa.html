@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Guarda-Roupa</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    /* TOPO */
+
+    .topo {
+      height: 25px;
+      background: #ffd400;
+      color: #000;
+
+      padding: 0 40px;
+
+      display: flex;
+      align-items: center;
+
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+
+    /* MENU (3 colunas centralizadas) */
+
+    header {
+      height: 65px;
+
+      padding: 0 40px;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      border-bottom: 1px dotted #555;
+    }
+
+
+    /* INSTAGRAM & ANIMAÇÃO DE ROTAÇÃO */
+
+    .instagram {
+      color: white;
+
+      font-size: 30px;
+
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-self: start;
+    }
+
+    .instagram img {
+      width: 50px;
+      height: 50px;
+      animation: rodar 10s linear infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .instagram:hover img {
+      animation-duration: 2s;
+    }
+
+    @keyframes rodar {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    /* NAV CENTRALIZADO ABSOLUTO */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+
+    nav a {
+      color: #999;
+
+      text-decoration: none;
+
+      font-size: 11px;
+    }
+
+
+    nav a:hover {
+      color: #ffd400;
+    }
+
+
+    /* ÁREA DIREITA (Busca + Botão) */
+
+    .acoes-direita {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-self: end;
+    }
+
+
+    .pesquisa {
+      width: 180px;
+      height: 32px;
+
+      background: #242424;
+
+      border-radius: 20px;
+
+      padding: 10px;
+
+      color: #888;
+
+      font-size: 9px;
+    }
+
+
+    .nova {
+      background: #ffd400;
+
+      border: none;
+
+      border-radius: 20px;
+
+      padding: 10px 17px;
+
+      font-weight: bold;
+
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+
+    /* CONTEÚDO */
+
+    main {
+      min-height: calc(100vh - 90px);
+
+      display: grid;
+
+      grid-template-columns: 45% 55%;
+    }
+
+
+    /* TEXTO */
+
+    .texto {
+      padding: 40px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+
+    .bem-vindo {
+      color: #ffd400;
+
+      font-size: 9px;
+
+      font-weight: bold;
+
+      margin-bottom: 20px;
+    }
+
+
+    h1 {
+      font-size: 75px;
+
+      line-height: .85;
+
+      margin-bottom: 20px;
+    }
+
+
+    h1 span {
+      color: #ffd400;
+    }
+
+
+    .descricao {
+      color: #999;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+      max-width: 390px;
+
+      margin-bottom: 20px;
+    }
+
+
+    /* BOTÃO */
+
+    .botoes {
+      display: flex;
+
+      gap: 10px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .botao {
+      padding: 12px 17px;
+
+      border-radius: 25px;
+
+      text-decoration: none;
+
+      font-size: 9px;
+
+      font-weight: bold;
+    }
+
+
+    .principal {
+      background: #ffd400;
+
+      color: #000;
+    }
+
+
+    /* IMAGEM DE FUNDO (LINK DIRETO DA INTERNET) */
+
+    .imagem {
+      position: relative;
+
+      /* Link direto de uma imagem real para funcionar imediatamente no seu computador */
+      background-image: url("https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/6/16-06-23-JF_1201A789-020_1_1.jpg");
+
+      background-size: 850px;
+
+      background-position: center ;
+
+      background-repeat: no-repeat;
+    }
+
+
+    /* FAIXA AMARELA SOBRE A IMAGEM */
+
+    .frase {
+      position: absolute;
+
+      bottom: 10%;
+
+      left: 15%;
+
+      background: #ffd400;
+
+      color: #000;
+
+      padding: 20px 45px;
+
+      transform: rotate(-7deg);
+
+      font-size: 18px;
+
+      font-weight: bold;
+    }
+
+
+    /* CELULAR */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      nav,
+      .pesquisa {
+        display: none;
+      }
+
+      .nova {
+        margin-left: auto;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .texto {
+        padding: 50px 25px;
+      }
+
+      h1 {
+        font-size: 55px;
+      }
+
+      .imagem {
+        height: 500px;
+      }
+
+      .frase {
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <div class="topo">
+    GUARDA-ROUPA DE WESLEY TORRES
+  </div>
+
+
+  <header>
+
+
+    <!-- INSTAGRAM -->
+
+    <a
+      class="instagram"
+      href="https://www.instagram.com/w.torress__/"
+      target="_blank"
+      title="Instagram"
+    >
+      <img src="https://static.vecteezy.com/system/resources/previews/018/930/413/large_2x/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram Logo">
+    </a>
+
+
+    <nav>
+
+      <a href="#">Início</a>
+
+      <a href="#">Masculino</a>
+
+      <a href="#">Feminino</a>
+
+      <a href="#">Favoritos</a>
+
+      <a href="#">Looks</a>
+
+    </nav>
+
+
+    <!-- AGRUPAMENTO DOS ELEMENTOS DA DIREITA -->
+    <div class="acoes-direita">
+
+      <div class="pesquisa">
+        🔍 Busque por peças...
+      </div>
+
+
+      <button class="nova">
+        + NOVA PEÇA
+      </button>
+
+    </div>
+
+
+  </header>
+
+
+  <main>
+
+
+    <section class="texto">
+
+
+      <div class="bem-vindo">
+        — BEM-VINDO(A) AO SEU GUARDA-ROUPA
+      </div>
+
+
+      <h1>
+
+        GUARDA<br>
+
+        <span>ROUPA</span>
+
+      </h1>
+
+
+      <p class="descricao">
+        Organize e visualize.
+      </p>
+
+
+      <div class="botoes">
+
+        <a
+          href="#"
+          class="botao principal"
+        >
+          VER ROUPAS →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ÁREA DIREITA DA IMAGEM -->
+    <section class="imagem">
+
+      <div class="frase">
+        ASICS GEL NYC GRAPHITE GREY BLACK
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+</body>
+
+</html>

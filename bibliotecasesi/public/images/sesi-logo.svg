@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 396 126" role="img" aria-labelledby="title">
+  <title id="title">SESI</title>
+  <rect width="396" height="126" fill="#e21f26"/>
+  <g fill="none" stroke="#fff" stroke-width="3" opacity=".95">
+    <path d="M0 6h396M0 120h396"/>
+    <path d="M0 27h30M0 48h30M0 69h30M0 90h30M0 111h30"/>
+    <path d="M366 27h30M366 48h30M366 69h30M366 90h30M366 111h30"/>
+  </g>
+  <text x="31" y="103" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="113" font-style="italic" font-weight="900" letter-spacing="-8" textLength="339" lengthAdjust="spacingAndGlyphs">SESI</text>
+</svg>
